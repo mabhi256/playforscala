@@ -1,0 +1,13 @@
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@import helper._
+@(customerForm:Form[Customer])(implicit lang: Lang)
+
+@main("welcome") {
+    <h1>Customer Form</h1>
+    @form(action=routes.Application.createCustomer()) {
+    @inputText(customerForm("Credit Limit"))
+    @inputText(customerForm("Customer Name"))
+    <input type="submit" value="Submit">
+    }
+}
